@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<title>A simple Jsmol example</title>
+<head>
+<script type="text/javascript" src="file:///android_asset/JSmol.min.js"></script>
+
+
+
+<script type="text/javascript">
+var Info = {
+  width: 300,
+  height: 300,
+  serverURL: "file:///android_asset/j2s/core/jsmol.php ",
+  use: "HTML5",
+  j2sPath: "file:///android_asset/j2s",
+  console: "jmolApplet0_infodiv"
+}
+</script>
+</head>
+<body>
+<script type="text/javascript">
+  jmolApplet0 = Jmol.getApplet("jmolApplet0", Info);
+  Jmol.script(jmolApplet0,"load Silicon.cif packed")
+</script>
+<br>
+<a href="javascript:Jmol.script(jmolApplet0,'spin on')">spin</a>
+<a href="javascript:Jmol.script(jmolApplet0,'spin off')">off</a>
+</body>

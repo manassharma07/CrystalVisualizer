@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<title>A simple Jsmol example</title>
+<head>
+<script type="text/javascript" src="JSmol.min.js"></script>
+
+
+
+<script type="text/javascript">
+var Info = {
+  width: 270,
+  height: 270,
+  serverURL: "jsmol.php ",
+  use: "HTML5",
+  j2sPath: "j2s",
+  console: "jmolApplet0_infodiv"
+}
+</script>
+</head>
+<body>
+<script type="text/javascript">
+  jmolApplet0 = Jmol.getApplet("jmolApplet0", Info);
+  Jmol.script(jmolApplet0,"load Silicon.cif packed")
+</script>
+<br>
+
+<a href="javascript:Jmol.script(jmolApplet0,'spin on')"><button>spin</button></a>
+<a href="javascript:Jmol.script(jmolApplet0,'spin off')"><button>off</button></a>
+<a href="javascript:Jmol.script(jmolApplet0,'spacefill')"><button>spacefill</button></a>
+<a href="javascript:Jmol.script(jmolApplet0,'spacefill 23%;wireframe 0.15\n')"><button>balls-sticks</button></a>
+<a href="javascript:Jmol.script(jmolApplet0,'spacefill off;wireframe 0.15\n')"><button>wireframe</button></a>
+
+</body>
