@@ -26,7 +26,7 @@ public class About extends AppCompatActivity {
                 .isRTL(false)
                 .setImage(R.drawable.logo)
                 .setDescription((getString(R.string.about)))
-                .addItem(new Element().setTitle("Version 1.0"))
+                .addItem(new Element().setTitle("Version 1.1"))
                 .addItem(license())
                 .addWebsite("http://wiki.jmol.org/index.php/JSmol","JSmol")
                 .addGitHub("manassharma07/CrystalVisualizer","Source Code")

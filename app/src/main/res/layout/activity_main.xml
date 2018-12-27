@@ -44,7 +44,7 @@
             android:layout_below="@id/web">
             <TableLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:id="@+id/spinners">
             <TableRow>
             <com.toptoche.searchablespinnerlibrary.SearchableSpinner

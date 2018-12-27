@@ -228,16 +228,33 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     "<body>\n" +
                     "<script type=\"text/javascript\">\n" +
                     "  jmolApplet0 = Jmol.getApplet(\"jmolApplet0\", Info);\n" +
-                    "  Jmol.script(jmolApplet0,\"load " + filePath + " packed\")\n" +
-                    "  Jmol.script(jmolApplet0,\"isosurface hkl {" +h1+ " " + k1 + " " + l1 +"}\")\n" +
+                    "  Jmol.script(jmolApplet0,\"load " + filePath + " packed; axes 2; axes scale 2.5\")\n" +
+                    "  Jmol.script(jmolApplet0,\"isosurface hkl {" +h1+ " " + k1 + " " + l1 +"} color red translucent\")\n" +
 
                     "</script>\n" +
                     "<br>\n" +
                     "<a href=\"javascript:Jmol.script(jmolApplet0,'spin on')\"><button>spin</button></a>\n" +
                     "<a href=\"javascript:Jmol.script(jmolApplet0,'spin off')\"><button>off</button></a>\n" +
                     "<a href=\"javascript:Jmol.script(jmolApplet0,'spacefill')\"><button>spacefill</button></a>\n" +
-                    "<a href=\"javascript:Jmol.script(jmolApplet0,'spacefill 23%;wireframe 0.15\n')\"><button>balls-sticks</button></a>\n" +
-                    "<a href=\"javascript:Jmol.script(jmolApplet0,'spacefill off;wireframe 0.15\n')\"><button>wireframe</button></a>\n" +
+                    "<a href=\"javascript:Jmol.script(jmolApplet0,'spacefill 23%;wireframe 0.15\\n')\"><button>balls-sticks</button></a>\n" +
+                    "<a href=\"javascript:Jmol.script(jmolApplet0,'spacefill off;wireframe 0.15\\n')\"><button>wireframe</button></a>\n" +
+                    "<a href=\"javascript:Jmol.script(jmolApplet0,'select all; selectionHalos ON; ')\"><button>select all</button></a>\n" +
+                    "<a href=\"javascript:Jmol.script(jmolApplet0,'select none; selectionHalos ON; ')\"><button>select none</button></a>\n" +
+                    "<a href=\"javascript:Jmol.script(jmolApplet0,'select none; selectionHalos ON; set picking SELECT')\"><button>select manual</button></a>\n" +
+                    "<a href=\"javascript:Jmol.script(jmolApplet0,'label on')\"><button>label on</button></a>\n" +
+                    "<a href=\"javascript:Jmol.script(jmolApplet0,'label off')\"><button>label off</button></a>\n" +
+                    "<!--<a href=\"javascript:Jmol.script(jmolApplet0,'x={selected};prompt x')\"><button>print selected</button></a>-->\n" +
+                    "<a href=\"javascript:Jmol.script(jmolApplet0,'if ({selected}.length==2){ prompt \\'Distance = \\'+distance({selected}[0] {selected}[1] )+\\'Angstroms\\'} else {prompt \\'select 2 atoms\\';}')\"><button>distance</button></a>\n" +
+                    "<a href=\"javascript:Jmol.script(jmolApplet0,'unitcell \\'primitive\\'')\"><button>primitive cell</button></a>\n" +
+                    "<a href=\"javascript:Jmol.script(jmolApplet0,'unitcell \\'conv\\'')\"><button>conventional cell</button></a>\n" +
+                    "<!--<a href=\"javascript:Jmol.script(jmolApplet0,'set echo top right;font echo 20 serif bolditalic;color echo green;echo \\'Distance = \\'+distance({selected}[0] {selected}[1] )')\"><button>echo</button></a>-->\n" +
+                    "<a href=\"javascript:Jmol.script(jmolApplet0,'draw pointgroup')\"><button>draw pointgroup on</button></a>\n" +
+                    "<a href=\"javascript:Jmol.script(jmolApplet0,'draw off')\"><button>pointgroup off</button></a>\n" +
+                    "<a href=\"javascript:Jmol.script(jmolApplet0,'selectedAtoms={selected};n=selectedAtoms.length;totalMass=0;comX=0;comY=0;comZ=0;for(i=1;i<=n;i++){mass=selectedAtoms[i].mass;\ttotalMass=totalMass+mass;\tcomX=comX+selectedAtoms[i].atomX*mass;\tcomY=comY+selectedAtoms[i].atomY*mass;\tcomZ=comZ+selectedAtoms[i].atomZ*mass;}comX=comX/totalMass;comY=comY/totalMass;comZ=comZ/totalMass;prompt \\'COM X-coord: \\'+comX+\\'COM Y-coord: \\'+comY+\\'COM Z-coord: \\'+comZ; draw sphere {@comX @comY @comZ} radius 0.3 color magenta')\"><button>COM of selected</button></a>\n" +
+                    "<a href=\"javascript:Jmol.script(jmolApplet0,' moveto 2 AXIS x')\"><button>along a</button></a>\n" +
+                    "<a href=\"javascript:Jmol.script(jmolApplet0,' moveto 2 AXIS y')\"><button>along b</button></a>\n" +
+                    "<a href=\"javascript:Jmol.script(jmolApplet0,' moveto 2 AXIS z')\"><button>along c</button></a>\n" +
+                    "<a href=\"javascript:Jmol.script(jmolApplet0,'load " + filePath + " packed; axes 2; axes scale 2.5;')\"><button>reset</button></a>\n" +
                     "</body>";
             webview.loadDataWithBaseURL("file:///android_asset/", html, "text/html", "utf-8", "");
             //filepath is your file's path
@@ -531,14 +548,31 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 "<body>\n" +
                 "<script type=\"text/javascript\">\n" +
                 "  jmolApplet0 = Jmol.getApplet(\"jmolApplet0\", Info);\n" +
-                "  Jmol.script(jmolApplet0,\"load "+filePath+" packed\")\n" +
+                "  Jmol.script(jmolApplet0,\"load "+filePath+" packed; axes 2; axes scale 2.5\")\n" +
                 "</script>\n" +
                 "<br>\n" +
                 "<a href=\"javascript:Jmol.script(jmolApplet0,'spin on')\"><button>spin</button></a>\n" +
                 "<a href=\"javascript:Jmol.script(jmolApplet0,'spin off')\"><button>off</button></a>\n" +
                 "<a href=\"javascript:Jmol.script(jmolApplet0,'spacefill')\"><button>spacefill</button></a>\n" +
-                "<a href=\"javascript:Jmol.script(jmolApplet0,'spacefill 23%;wireframe 0.15\n')\"><button>balls-sticks</button></a>\n" +
-                "<a href=\"javascript:Jmol.script(jmolApplet0,'spacefill off;wireframe 0.15\n')\"><button>wireframe</button></a>\n" +
+                "<a href=\"javascript:Jmol.script(jmolApplet0,'spacefill 23%;wireframe 0.15\\n')\"><button>balls-sticks</button></a>\n" +
+                "<a href=\"javascript:Jmol.script(jmolApplet0,'spacefill off;wireframe 0.15\\n')\"><button>wireframe</button></a>\n" +
+                "<a href=\"javascript:Jmol.script(jmolApplet0,'select all; selectionHalos ON; ')\"><button>select all</button></a>\n" +
+                "<a href=\"javascript:Jmol.script(jmolApplet0,'select none; selectionHalos ON; ')\"><button>select none</button></a>\n" +
+                "<a href=\"javascript:Jmol.script(jmolApplet0,'select none; selectionHalos ON; set picking SELECT')\"><button>select manual</button></a>\n" +
+                "<a href=\"javascript:Jmol.script(jmolApplet0,'label on')\"><button>label on</button></a>\n" +
+                "<a href=\"javascript:Jmol.script(jmolApplet0,'label off')\"><button>label off</button></a>\n" +
+                "<!--<a href=\"javascript:Jmol.script(jmolApplet0,'x={selected};prompt x')\"><button>print selected</button></a>-->\n" +
+                "<a href=\"javascript:Jmol.script(jmolApplet0,'if ({selected}.length==2){ prompt \\'Distance = \\'+distance({selected}[0] {selected}[1] )+\\'Angstroms\\'} else {prompt \\'select 2 atoms\\';}')\"><button>distance</button></a>\n" +
+                "<a href=\"javascript:Jmol.script(jmolApplet0,'unitcell \\'primitive\\'')\"><button>primitive cell</button></a>\n" +
+                "<a href=\"javascript:Jmol.script(jmolApplet0,'unitcell \\'conv\\'')\"><button>conventional cell</button></a>\n" +
+                "<!--<a href=\"javascript:Jmol.script(jmolApplet0,'set echo top right;font echo 20 serif bolditalic;color echo green;echo \\'Distance = \\'+distance({selected}[0] {selected}[1] )')\"><button>echo</button></a>-->\n" +
+                "<a href=\"javascript:Jmol.script(jmolApplet0,'draw pointgroup')\"><button>draw pointgroup on</button></a>\n" +
+                "<a href=\"javascript:Jmol.script(jmolApplet0,'draw off')\"><button>pointgroup off</button></a>\n" +
+                "<a href=\"javascript:Jmol.script(jmolApplet0,'selectedAtoms={selected};n=selectedAtoms.length;totalMass=0;comX=0;comY=0;comZ=0;for(i=1;i<=n;i++){mass=selectedAtoms[i].mass;\ttotalMass=totalMass+mass;\tcomX=comX+selectedAtoms[i].atomX*mass;\tcomY=comY+selectedAtoms[i].atomY*mass;\tcomZ=comZ+selectedAtoms[i].atomZ*mass;}comX=comX/totalMass;comY=comY/totalMass;comZ=comZ/totalMass;prompt \\'COM X-coord: \\'+comX+\\'COM Y-coord: \\'+comY+\\'COM Z-coord: \\'+comZ; draw sphere {@comX @comY @comZ} radius 0.3 color magenta')\"><button>COM of selected</button></a>\n" +
+                "<a href=\"javascript:Jmol.script(jmolApplet0,' moveto 2 AXIS x')\"><button>along a</button></a>\n" +
+                "<a href=\"javascript:Jmol.script(jmolApplet0,' moveto 2 AXIS y')\"><button>along b</button></a>\n" +
+                "<a href=\"javascript:Jmol.script(jmolApplet0,' moveto 2 AXIS z')\"><button>along c</button></a>\n" +
+                "<a href=\"javascript:Jmol.script(jmolApplet0,'load "+ filePath +" packed; axes 2; axes scale 2.5')\"><button>reset</button></a>"+
                 "</body>";
         return html;
     }
